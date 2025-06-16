@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_practice/choose_mahindra_model.dart';
+import 'choose_renault_model.dart';
+import 'choose_honda_model.dart';
+import 'choose_mg_model.dart';
+
+class  WelcomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Welcome Page"),
+      ),
+
+    body:SingleChildScrollView(
+    child: Column(
+    children: [
+    //For lochab
+    Container(
+    height: 100,
+    width: 800,
+    color: Colors.black,
+    child: Center(
+    child: Text("LOHCHAB",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.red),))),
+
+    //For choosing car
+    Container(
+    height: 50,
+    child: Text("Choose your car",style: TextStyle(color: Colors.blue)),),
+    SizedBox(height: 20,),
+
+    //For choosing from cars
+    TextButton(onPressed:(){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>choose_mahindra_model()));
+    },
+      child: Container(
+      height: 200,
+      child: Image.asset('assets/images/mahindra.jpeg'),),
+    ),
+    SizedBox(height: 20,),
+
+    TextButton(onPressed: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>choose_renault_model()));
+    },
+      child: Container(
+      height: 200,
+      child: Image.asset('assets/images/renault.png'),),
+    ),
+
+    SizedBox(height: 20,),
+    TextButton(onPressed:(){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>choose_honda_model()));
+    },
+      child: Container(
+      height: 200,
+      child: Image.asset('assets/images/honda.png'),),
+    ),
+
+    SizedBox(height: 20,),
+    TextButton(onPressed: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>choose_mg_model()));
+    },
+      child: Container(
+      height: 200,
+      child: Image.asset('assets/images/mg.png'),),
+    ),
+
+    SizedBox(height: 20,),
+    Container(
+    height: 200,
+    child: Image.asset('assets/images/first choice.jpeg'),),
+    ],
+    ),
+    )
+    );
+  }
+}
