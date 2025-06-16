@@ -1,0 +1,64 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_practice/thar_roxx_zoom.dart';
+
+class TharRoxx extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("LOHCHAB MOTORS"),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              color: Colors.black,
+              height: 100,
+              width: 800,
+              child: Center(
+                child: Text(
+                  "Thar_Roxx",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.red),
+                ),
+              ),
+            ),
+
+            // GestureDetector to navigate to the zoomable image
+            GestureDetector(
+              onTap: () {
+                // Navigate to the zoom page when image is tapped
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => thar_roxx_zoom()),
+                );
+              },
+              child: Image.asset('assets/images/thar_roxx.jpeg'),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Text(
+                    "Key features of Mahinda Thar Roxx:\n"
+                        "-ARAI Mileage - 15.2kmpl\n"
+                        "-FuelType - Diesel\n"
+                        "-No. of cylinders - 4\n"
+                        "-Max Power - 172bhp@3500rpm\n"
+                        "-Max Torque - 370Nm@1500-3000rpm\n"
+                        "-Seating capacity - 5\n"
+                        "-Transmission type - Automatic\n"
+                        "-Fuel tank capacity - 57 litres\n"
+                        "-Body type - SUV\n\n\n"
+                        "Price - Rs.12.99 - 23.09 Lakh",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
